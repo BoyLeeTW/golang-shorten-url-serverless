@@ -31,7 +31,7 @@ Respond in JSON format:
 ```
 curl -X GET \
   https://${DOMAIN}/shortened_id/${shortened_id} \
-  -H 'content-type: application/json' \
+  -H 'content-type: application/json'
 ```
 ```
 - Redirect directly if shortened_id exists
