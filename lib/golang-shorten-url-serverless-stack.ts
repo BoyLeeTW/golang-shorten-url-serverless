@@ -92,12 +92,8 @@ export class GolangShortenUrlServerlessStack extends cdk.Stack {
       },
     });
 
-    new cdk.CfnOutput(this, `ShortenApiUrl-original`, {
+    new cdk.CfnOutput(this, `ShortenApiUrl (Apigateway)`, {
       value: shortenUrlApi.url!,
-    });
-
-    new cdk.CfnOutput(this, `ShortenApiUrl-modified`, {
-      value: shortenUrlApi.url!.replace("https://", "").replace("/", ""),
     });
 
     new cdk.CfnOutput(this, `ShortenApiCDNDomainName`, {
