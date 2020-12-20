@@ -53,15 +53,15 @@ func lambdaEventHandler(ctx context.Context, request events.APIGatewayProxyReque
 	if customError != nil {
 		return events.APIGatewayProxyResponse{
 			StatusCode: customError.HTTPStatusCode,
-			Headers: map[string]string{
-				"Cache-Control": "max-age=10",
-			},
-			Body: customError.Message,
+			Body:       customError.Message,
 		}, nil
 	}
 
 	return events.APIGatewayProxyResponse{
 		StatusCode: http.StatusAccepted,
-		Body:       shortenedID,
+		Body:       `{"shortened_id":"` + shortenedID + `"}`,
+		Headers: map[string]string{
+			"Content-Type": "application/json",
+		},
 	}, nil
 }
