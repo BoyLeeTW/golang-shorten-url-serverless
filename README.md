@@ -7,8 +7,8 @@ In my point of view, it’s a read-heavy service and the content is quite static
 So I use a CDN with long cache time to lower the request time from user to server and optimize the user experience.
 And because it is a new service so we don’t have information about peak hours and count. It might be a waste if we build and maintain a server with too many resource allocated. And it might be potential threat if we allocate resource that is not enough to handle the requests. So I choose API Gateway, Lambda and Dynamo DB for the shorten URL solution. We only have to pay based on the request instead of the whole instance. So we can focus on the application and business logic first, and consider about server migration if needed. 
 
-![Alt text](https://github.com/BoyLeeTW/golang-shorten-url-serverless/blob/master/get-redirect-api.png?raw=true "get-redirect-api")
-![Alt text](https://github.com/BoyLeeTW/golang-shorten-url-serverless/blob/master/post-register-api.png?raw=true "post-register-api")
+![Screenshot](get-redirect-api.png)
+![Screenshot](post-register-api.png)
 
 ## Prerequisites
 Go 1.14 [installed](https://golang.org/doc/install)
