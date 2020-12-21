@@ -7,8 +7,9 @@ In my point of view, shorten URL is a **read-heavy** service and the output is q
 So I design the architecture as following:
 * **CDN With Long Cache TTL**: Since the mapping between shortened id and redirect url won’t be changed after created, I use a CDN with long TTL to lower the request time from user to server and also optimize the user experience.
 * **Serverless Services On Cloud**: Since we don’t have information about peak hours and count yet, it might cause idle/insufficient resources if we build and maintain servers for applications and database. So I choose API Gateway, Lambda and Dynamo DB for the shorten URL solution that we only have to pay based on the request count instead of whole instance. Then we can focus on the application and business logic first and consider about server migration if needed.<br>
-* Diagram
+* Diagram for get redirect api
 ![Screenshot](get-redirect-api.png)
+* Diagram for post register api
 ![Screenshot](post-register-api.png)
 
 ## How to use it?
