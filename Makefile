@@ -34,7 +34,7 @@ bootstrap:
 deploy: generate_lambda_files
 	@echo Deploying...
 	AWS_PROFILE=$(AWS_PROFILE) \
-	AWS_DEFAULT_REGION=$(AWS_PROFILE) \
+	AWS_DEFAULT_REGION=$(AWS_DEFAULT_REGION) \
 		node_modules/aws-cdk/bin/cdk deploy GolangShortenUrlServerlessStack \
 			--app="npx ts-node ./bin/golang-shorten-url-serverless.ts" \
 			--toolkit-stack-name=CDKToolkit
@@ -50,7 +50,7 @@ diff:
 synth:
 	@echo Diff The Stack
 	AWS_PROFILE=$(AWS_PROFILE) \
-	AWS_DEFAULT_REGION=$(AWS_PROFILE) \
+	AWS_DEFAULT_REGION=$(AWS_DEFAULT_REGION) \
 		node_modules/aws-cdk/bin/cdk synth GolangShortenUrlServerlessStack \
 			--app="npx ts-node ./bin/golang-shorten-url-serverless.ts" \
 			--toolkit-stack-name=CDKToolkit
@@ -58,7 +58,7 @@ synth:
 destroy:
 	@echo Destroying...
 	AWS_PROFILE=$(AWS_PROFILE) \
-	AWS_DEFAULT_REGION=$(AWS_PROFILE) \
+	AWS_DEFAULT_REGION=$(AWS_DEFAULT_REGION) \
 		node_modules/aws-cdk/bin/cdk destroy GolangShortenUrlServerlessStack \
 			--app="npx ts-node ./bin/golang-shorten-url-serverless.ts" \
 			--toolkit-stack-name=CDKToolkit
