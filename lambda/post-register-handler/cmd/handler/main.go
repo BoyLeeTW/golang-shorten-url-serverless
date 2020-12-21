@@ -58,7 +58,7 @@ func lambdaEventHandler(ctx context.Context, request events.APIGatewayProxyReque
 	}
 
 	return events.APIGatewayProxyResponse{
-		StatusCode: http.StatusAccepted,
+		StatusCode: http.StatusOK,
 		Body:       `{"shortened_id":"` + shortenedID + `"}`,
 		Headers: map[string]string{
 			"Content-Type": "application/json",

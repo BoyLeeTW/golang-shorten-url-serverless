@@ -15,7 +15,7 @@ var (
 		Message:        "Internal server error",
 	}
 	ErrItemNotExist *customerrors.CustomError = &customerrors.CustomError{
-		HTTPStatusCode: http.StatusForbidden,
+		HTTPStatusCode: http.StatusNotFound,
 		Message:        "shortenId doesn't exist",
 	}
 )
