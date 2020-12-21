@@ -19,10 +19,10 @@ aws access with S3, Dynamodb, Lambda, API Gateway, Cloudfront, CloudFormation
 
 ## How to use it?
  * Prerequisites: 
-  - Go 1.14 [installed](https://golang.org/doc/install)
-  - npm installed
-  - cdk [installed](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-typescript.html)
-  - aws access with S3, Dynamodb, Lambda, API Gateway, Cloudfront, CloudFormation
+   * Go 1.14 [installed](https://golang.org/doc/install)
+   * npm installed
+   * cdk [installed](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-typescript.html)
+   * aws access with S3, Dynamodb, Lambda, API Gateway, Cloudfront, CloudFormation
  * Update AWS_PROFILE and AWS_DEFAULT_REGION in Makefile
  * run `cdk bootstrap` if this is the first time to run CDK in the region
  * run `make -f Makefile deploy` for shorten url service deploy, it might take about 5 minutes. Endpoints of API Gateway and CloudFront will be displayed on the console right after deployment.
