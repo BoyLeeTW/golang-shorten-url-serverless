@@ -3,19 +3,13 @@
 A serverless shorten URL solution with CDK, and the application is written in Golang.
 
 ## Architecture
-In my point of view, shorten URL is a *read-heavy* service and the output is quite *static*. <br>
-So I design the architecture as following: <br>
-* *CDN With Long Cache TTL*: Since the mapping between shortened id and redirect url won’t be changed after created, I use a CDN with long TTL to lower the request time from user to server, and also optimize the user experience.
-* *Serverless Services On Cloud*: Since we don’t have information about peak hours and count yet, it might cause idle/insufficient resources if we build and maintain servers for applications and database, I choose API Gateway, Lambda and Dynamo DB for the shorten URL solution, we only have to pay based on the request count instead of whole instance. We can focus on the application and business logic first and consider about server migration if needed. 
+In my point of view, shorten URL is a **read-heavy** service and the output is quite **static**. <br>
+So I design the architecture as following:
+* **CDN With Long Cache TTL**: Since the mapping between shortened id and redirect url won’t be changed after created, I use a CDN with long TTL to lower the request time from user to server, and also optimize the user experience.
+* **Serverless Services On Cloud**: Since we don’t have information about peak hours and count yet, it might cause idle/insufficient resources if we build and maintain servers for applications and database, I choose API Gateway, Lambda and Dynamo DB for the shorten URL solution, we only have to pay based on the request count instead of whole instance. We can focus on the application and business logic first and consider about server migration if needed. 
 
 ![Screenshot](get-redirect-api.png)
 ![Screenshot](post-register-api.png)
-
-## Prerequisites
-Go 1.14 [installed](https://golang.org/doc/install)<br>
-npm installed<br>
-cdk [installed](https://docs.aws.amazon.com/cdk/latest/guide/work-with-cdk-typescript.html)<br>
-aws access with S3, Dynamodb, Lambda, API Gateway, Cloudfront, CloudFormation
 
 ## How to use it?
  * Prerequisites: 
